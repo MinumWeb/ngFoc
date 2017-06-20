@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input, Output } from '@angular/core';
 
 import { DataService } from '../../../services/data.service';
 
@@ -8,6 +8,7 @@ import { DataService } from '../../../services/data.service';
   styleUrls: ['./grid-item.component.scss']
 })
 export class GridItemComponent implements OnInit {
+  @Input() data; 
 
   items:Array<any>;
 

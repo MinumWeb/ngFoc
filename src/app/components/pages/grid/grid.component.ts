@@ -5,8 +5,8 @@ import { DataService } from '../../../services/data.service';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss']
-  // providers: [DataService]
+  styleUrls: ['./grid.component.scss'],
+  providers: [DataService]
 })
 
 export class GridComponent implements OnInit {
@@ -15,12 +15,38 @@ export class GridComponent implements OnInit {
   // constructor(@Inject('users') private users) {}
 
   items:Array<any>;
+  private errorMessage:any;
 
   // Another way to provide data.service
-  constructor(private dataService: DataService) {}
+  constructor (private dataService: DataService) {
+    this.getItems();
+  }
 
-  ngOnInit() {
+  getItems ():void {
+
+    /**
+     * When you have a real services from an API
+     * You need a subscriber to listen on changes.
+     */
+
+    // this.dataService
+    //   .getItems()
+    //   .subscribe(
+    //     items => {
+    //       this.items = items;
+    //       console.log(this.items);
+    //     },
+    //     error => {
+    //       this.errorMessage = <any>error;
+    //     }
+
+    //   );
+
     this.items = this.dataService.getItems();
+  }
+
+  ngOnInit () {
+    // this.items = this.dataService.getItems();
   }
 
 
