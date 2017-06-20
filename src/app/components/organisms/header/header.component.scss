@@ -1,0 +1,22 @@
+:host {
+  width: 100%;
+	display: flex;
+  justify-content: space-between;
+	top: 0;
+	left: 0;
+  padding: 25px;
+  border-bottom: 3px solid #d9d9d9;
+  &/deep/ {
+    .logo {
+      display: inline-block;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      background-color: #e9e9e9;
+    }
+    .postgrad__link {
+      line-height: 50px;
+      display: inline-block;
+    }
+  }
+}
